@@ -1,0 +1,61 @@
+% ANY IMPORT IS PERFORMED ON "cv42.cls" OR "cv42.tex" (FLAT TREE)
+
+\documentclass[
+	a4paper,
+	% 9pt,
+	sidesectionsize=LARGE,
+	% showframes,
+	% vline=2.2em,
+	% topbottommargin=0.03\heightPaper,
+	profilepicsize=4.0cm, % 5x for bio
+	profilepicsizey=4.8cm, % 6x for bio
+	% profilepicborderwidth=3.5pt,
+	% profilepicstyle=profilecircle,
+	profilepicstyle=profilerounded,
+	% profilepiczoom=1.0,
+	% profilepicxshift=0mm,
+	% profilepicyshift=0mm,
+	% profilepicrounding=1.0cm,
+	% logowidth=4.5cm,
+	% logospace=5mm,
+	% logoposition=before,
+]{cv42}
+
+% -- option section 
+\import{./document/}{usepackage.tex}
+
+% +-----------------------------------------------------------------------------
+% | DOCUMENT
+% |
+% Commenting out columns might help to pinpoint where compile errors are rooted
+
+% import user's personal information
+\import{./config/}{personal.tex}
+
+\import{./document/}{personal.tex}
+\import{./document/}{pg01Banner.tex}
+\import{./document/}{pg02Banner.tex}
+
+\begin{document}
+
+    \makefrontsidebanner
+    \drawpagenumber{colortextbody}{1}
+    \import{./document/}{pg01Doc.tex}
+    
+    
+    
+    \newpage
+    % \newgeometry{
+    % 	top=\heightMarginPaperTop,
+    % 	bottom=\heightMarginPaperBottom,
+    % 	left=\widthMarginPaperLeft,
+    % 	right=\widthMarginPaperRight
+    % }
+    
+    \makebacksidebanner
+    \drawpagenumber{colortextbody}{2}
+    \import{./document/}{pg02Doc.tex}
+    
+
+\end{document}
+% L_____________________________________________________________________________

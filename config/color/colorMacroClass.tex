@@ -1,0 +1,134 @@
+% +-----------------------------------------------------------------------------
+% | COLORS, SET VARIABLES TO ALREADY DEFINED PALETTES VIA COLORLET
+% |
+% Color names are taken from:
+% https://www.colorhexa.com/
+
+% chaining color is alright as long as the order makes sense
+% a mindful solution is using shortcut colors as down below:
+
+%% shortcut colors, are not macro-related themselves
+% accent color that is used with bang (e.g. somecolor!90 )
+\colorlet{colorshortcutaccent}{color04strongblue}
+% text color throughout the document
+\colorlet{colorshortcuttext}{color07darkest}
+
+
+
+%% colors for document body
+\colorlet{colortextbody}{colorshortcuttext}
+\colorlet{colorsectionbody}{color07darkest}
+\colorlet{colorsubsectionbody}{color07darker}
+% signature color
+\colorlet{colorsignature}{colorshortcuttext}
+
+%% colors for sidebanner
+\colorlet{colorbackgroundside}{color07lightest}
+\colorlet{colortextside}{colorshortcuttext}
+\colorlet{colorsectionside}{color07darkest}
+\colorlet{colorsectionlineside}{color07medium}
+\colorlet{colorsubsectionside}{color07darker}
+% colors for personal
+\colorlet{colorphotoframe}{color07dark}
+\colorlet{colorname}{black}
+\colorlet{colorjobtitle}{colorshortcuttext}
+
+%% sidebanner seperator line
+\colorlet{colorsidebannerseperatorline}{color07darkest}
+%% nameandjob seperator line
+\colorlet{colorundernameandjobseperatorline}{color07darkest}
+
+%% common colors
+% hyperlink color
+\colorlet{colorhref}{colorshortcuttext}
+% color used for all icon arguments
+\colorlet{coloricon}{color07dark}
+
+
+%% skill colors
+
+% color for recticle beans
+\colorlet{colorrecticletext}{colorshortcuttext}
+\colorlet{colorrecticlebackground}{white}
+
+
+% color for pointskill filled points
+\colorlet{colorpointskillfilled}{color07darker}
+% color of pointskill unfilled points
+\colorlet{colorpointskillunfilled}{color07light}
+
+% color for barskill filled points
+\colorlet{colorbarskillfilled}{colorshortcutaccent!85}
+% color of barskill unfilled points
+\colorlet{colorbarskillunfilled}{colorshortcuttext!30}
+
+% todo: switch-like solution to below
+\newcommand{\legendcolorpalette}{palette07}
+% default text color is colorshortcuttext
+\colorlet{colorpoortext}{colorshortcuttext}
+\colorlet{colorsubpartext}{colorshortcuttext}
+\colorlet{colorfairtext}{colorshortcuttext}
+\colorlet{colorgoodtext}{colorshortcuttext}
+\colorlet{colorgreattext}{colorshortcuttext}
+% sidebanner color codes (displayed in legend)
+% define as alias to above selections
+\ifthenelse{\equal{\legendcolorpalette}{palette01}}
+{
+    \colorlet{colorpoor}{color01darkorangebrowntone}
+    \colorlet{colorsubpar}{color01verysoftorange}
+    \colorlet{colorfair}{color01verylightgray}
+    \colorlet{colorgood}{color01slightlydesaturatedcyan}
+    \colorlet{colorgreat}{color01darkcyan}
+}
+{
+    \ifthenelse{\equal{\legendcolorpalette}{palette02}}
+    {
+        \colorlet{colorpoor}{color02darkmoderateviolet}
+        \colorlet{colorsubpar}{color02grayishviolet}
+        \colorlet{colorfair}{color02verylightgray}
+        \colorlet{colorgood}{color02verysoftlimegreen}
+        \colorlet{colorgreat}{color02limegreen}
+    }
+    {
+        \ifthenelse{\equal{\legendcolorpalette}{palette03}}
+        {
+            \colorlet{colorpoor}{color03strongred}
+            \colorlet{colorsubpar}{color03softorange}
+            \colorlet{colorfair}{color03verylightgray}
+            \colorlet{colorgood}{color03verysoftblue}
+            \colorlet{colorgreat}{color03darkblue}
+        }
+        {
+            \ifthenelse{\equal{\legendcolorpalette}{palette04}}
+            {
+                
+                \colorlet{colorpoor}{color04strongred}
+                \colorlet{colorsubpar}{color04softorange}
+                \colorlet{colorfair}{color04paleyellow}
+                \colorlet{colorgood}{color04verysoftblue}
+                \colorlet{colorgreat}{color04strongblue}
+            }
+            {
+                \ifthenelse{\equal{\legendcolorpalette}{palette07}}
+                {
+                    
+                    \colorlet{colorpoorbackground}{color07lighter}
+                    \colorlet{colorpoortext}{color07darkest}
+                    \colorlet{colorsubparbackground}{color07light}
+                    \colorlet{colorsubpartext}{color07darkest}
+                    \colorlet{colorfairbackground}{color07medium}
+                    \colorlet{colorfairtext}{color07lightest}
+                    \colorlet{colorgoodbackground}{color07dark}
+                    \colorlet{colorgoodtext}{color07lightest}
+                    \colorlet{colorgreatbackground}{color07darker}
+                    \colorlet{colorgreattext}{color07lightest}
+                }
+                {
+                    \null
+                }
+            }
+        }
+    
+    }   
+}
+% L_____________________________________________________________________________

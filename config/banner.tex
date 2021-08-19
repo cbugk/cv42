@@ -1,0 +1,26 @@
+%% -- DECLARATION --
+
+% -- declare distance of pagetop to horizontal seperator line 
+\newcommand*{\heightLineHorizontalBannerFrontpage}{64mm}
+\newcommand*{\heightLineHorizontalBannerBackpage}{49mm}
+
+% -- declare banner lengths
+\newlength{\widthBanner}
+\newlength{\heightBanner}
+
+% --declare banner's text block lengths
+\newlength{\widthBlockTextBanner}
+\newlength{\heightBlockTextBanner}
+
+
+%% -- SETTINGS --
+
+% -- set banner lengths
+\setlength{\widthBanner}{56mm}
+\setlength{\heightBanner}{\heightPaper - \heightMarginPaperTop - \heightMarginPaperBottom}
+
+% --set banner's text block lengths
+% -- for some reason a value (2mm) needs to be substracted twice from width and
+% once from height
+\setlength{\widthBlockTextBanner}{\widthBanner - \widthMarginBannerLeft - \widthMarginBannerRight -2.0\unknownTextBlockAdjustLengt}
+\setlength{\heightBlockTextBanner}{\heightBanner - \heightMarginBannerTop - \heightMarginBannerBottom -\unknownTextBlockAdjustLengt}

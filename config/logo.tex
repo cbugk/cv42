@@ -1,0 +1,10 @@
+% logo settings
+\newlength{\logowidth}
+\setlength{\logowidth}{\profilepicsize}
+\DeclareOptionX{logowidth}{\setlength{\logowidth}{#1}}
+
+\newlength\logospace%
+\DeclareOptionX{logospace}{\setlength{\logospace}{#1}}
+
+\newcommand*{\logoposition}{}
+\DeclareOptionX{logoposition}{\renewcommand{\logoposition}{#1}}

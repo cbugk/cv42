@@ -1,0 +1,66 @@
+% +-----------------------------------------------------------------------------
+% | ADDITIONAL PACKAGES
+% |
+
+% fine tune line spacing
+% \usepackage{setspace}
+% \setstretch{1.1}
+
+% improve word spacing and hyphenation
+\usepackage{microtype}
+\usepackage{ragged2e}
+
+% uncomment in case you don't want any hyphenation
+%\usepackage[none]{hyphenat}
+
+% take care of proper font encoding
+\ifxetexorluatex
+	\usepackage{fontspec}
+	\defaultfontfeatures{Ligatures=TeX}
+	% \newfontfamily\headingfont[Path=fonts/]{segoeuib.ttf} % use local font
+\else
+	\usepackage[utf8]{inputenc}
+	\usepackage[T1]{fontenc}
+\fi
+
+% use a sans serif font as default
+\usepackage[sfdefault]{ClearSans}
+% \usepackage[sfdefault]{noto}
+
+% multi-language CV XeLaTeX and polyglossia (should also work with LuaLaTeX)
+% NOTE: breaks \pointskill, \membership and some spacings
+% \ifxetexorluatex
+% 	\usepackage{polyglossia}
+% 	\newfontfamily\arabicfontsf[Script=Arabic,Scale=1.5]{Amiri}
+% 	\newfontfamily\englishfontsf{Clear Sans}
+% 	\setmainfont{Amiri}
+% 	\setdefaultlanguage{arabic}
+% 	\setotherlanguage{english}
+% \fi
+
+% enable mathematical syntax for some symbols like \varnothing
+\usepackage{amssymb}
+
+% enable FPeval, sample below:
+% https://www.texdev.net/2018/12/09/floating-point-calculations-in-latex
+\usepackage{xfp}
+
+% bubble diagram configuration
+\usepackage{smartdiagram}
+\smartdiagramset{
+	% default font size is \large, so adjust to harmonize with sidebanner layout
+	bubble center node font = \normalsize,
+	bubble node font = \normalsize,
+	% default: 4cm/2.5cm; make minimum diameter relative to sidebanner size
+	bubble center node size = 0cm,%0.10\sidebannertextwidth,
+	bubble node size = 0.5cm,%0.25\sidebannertextwidth,
+	distance center/other bubbles = 1cm,
+	% set center bubble color
+	bubble center node color = colorbubblenodecenter,
+	% define the list of colors usable in the diagram
+	set color list = {colorbubblenode01st, colorbubblenode02nd,
+	colorbubblenode03rd, colorbubblenode04th, colorbubblenode05th},
+	% sets the opacity at which the bubbles are shown
+	bubble fill opacity = 0.8,
+}
+% L_____________________________________________________________________________

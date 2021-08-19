@@ -1,0 +1,141 @@
+% +-----------------------------------------------------------------------------
+% | sidebanner 1st PAGE
+% |
+% add more profile sections to sidebanner on first page
+\addtofrontsidebanner{
+    
+    % -- line seperating banner and the document
+	\lineVerticalBanner{colorsidebannerseperatorline}
+
+    % -- for debugging banner text block position and dimensions
+    %\fbox{
+    
+    % -- Easier to wrap sidebanner as a whole, so vfill will actually dump
+    % desired content to the bottom. Source below:
+    % https://tex.stackexchange.com/questions/223961/latex-text-parbox-at-bottom-of-page
+	\parbox[t][\heightBlockTextBanner][t]{\linewidth}{
+	    % -- Begin Personal
+        % -- most sidebanner commands end with \par; increase space between them
+		\setlength{\parskip}{1ex}
+
+		% -- optionally insert logo picture before profile
+		\plotlogobefore
+
+		% -- optionally insert profile picture
+		\plotprofilepicture
+
+		% -- optionally insert logo picture after profile
+		\plotlogoafter
+
+		% -- name and job
+		\nameandjob
+
+        % make sure there is no space at top, but after cvjob
+		\setlength{\parskip}{1ex}
+
+		% -- personal information
+		\begin{icontable}[1.6]{1.7em}{0.4em}
+			\personaldata
+		\end{icontable}
+	
+    	% -- include gosquare national flags from https://github.com/gosquared/flags;
+    	% -- naming according to ISO 3166-1 alpha-2 country codes
+    	\graphicspath{{pics/flags/shiny/}}
+    	% End Personal
+    	
+        % -- line seperating nameandjob and the rest of sidebanner
+		\lineHorizontalBanner{colorundernameandjobseperatorline}{\heightLineHorizontalBannerFrontpage}
+    	
+    
+    	% -- social network accounts incl. proper hyperlinks
+    	\sidesection{Social Accounts}
+    		\begin{icontable}{1.5em}{1em}
+    		    \social{\faLinkedin}
+    				{https://linkedin.com/in/johndoesmith}
+    				{johndoesmith}
+    			% this account happens to be registered in 2009, interesting.
+    		    \social{\faGithubSquare}
+    				{https://github.com/johndoesmith}
+    				{github.com/johndoesmith}
+    		    % this account also exists. 2020 isn't as much interesting.
+    			\social{\faGitlab}
+    				{https://gitlab.com/johndoesmith}
+    				{gitlab.com/johndoesmith}
+    			\social{\faMedium}
+    			    {https://medium.com/@johndoesmith}
+    			    {@johndoesmith}
+    		\end{icontable}
+    		
+    	\sidesection{Languages}
+    	    % type 01 - compatible with type 01
+        	    {
+        	        \hspace{0em} \cvIcon{\flag{GB.png}} ~ \sidetext{English \hfill Native}
+        	    } \par
+        	% type 02 - A1 to C2
+        	    \pointskill{\flag{DE.png}}{German}{3}[6]
+        	    \pointskill{\flag{TR.png}}{Turkish}{1}[6]
+        	    
+            % type 03
+                %\begin{sidebannerminipage}
+                %    \flushleft
+                %    \recticlegreat{English: Native}
+                %    \recticlegood{German: Good}
+                %    \recticlepoor{Turkish: Beginner}
+                %\end{sidebannerminipage}   
+    	
+        % -- Soft skills; pointskills
+    	\sidesection{Soft Skills}
+    	    \skill{\faCloud}{Softest skill}
+			\skill{\faBed}{Softer skill}
+			\skill{\faCouch}{Soft Skill}
+			\skill{\faCode}{Soft-like skill}
+			
+        % -- Hard skills, color coded recticle beans
+    	\sidesection{Hard Skills}
+    	
+            \sidesubsection{Forums etc.}{
+                \begin{sidebannerminipage}
+                    \flushleft
+            		\recticlegood{StackOverflow}
+            		\recticlegreat{Reddit}
+            		\recticlefair{MyDigitalLife}
+            		\recticlesubpar{Hackaday}
+            		\recticlegood{instructables}
+            		\recticlegood{XDA Devs}
+            		\recticlegood{Donan\i m Haber}
+            		
+            	\end{sidebannerminipage}
+        	}
+            
+            \sidesubsection{Programming Langs.}{
+        	    \begin{sidebannerminipage}
+        	        \flushleft
+        	        \recticlepoor{R}
+        	        \recticlepoor{Boo}
+            		\recticlepoor{Common Lisp}
+            		\recticlepoor{Haskell}
+            		\recticlegreat{Scratch}
+            	\end{sidebannerminipage}
+        	}
+        	
+        
+        % filler till bottom
+        \null\vfill
+        
+        \sidesectioncentered{\raise \large \raisebox{0.5mm}{Legend}}
+            \begin{sidebannerminipage}
+                \centering
+                \small
+                \recticlegreat{Great}
+                \recticlegood{Good}
+                \recticlefair{Fair}
+                \par
+                \recticlesubpar{Subpar}
+        		\recticlepoor{Poor}
+        	\end{sidebannerminipage}
+        
+        
+    } % parbox end
+    %} % fbox end
+}
+% L_____________________________________________________________________________

@@ -1,0 +1,77 @@
+%% -- DECLARATION --
+
+% -- declare A4 size
+\newlength{\widthPaper}
+\newlength{\heightPaper}
+
+% -- declare paper margins
+\newlength{\heightMarginPaperTop}
+\newlength{\heightMarginPaperBottom}
+\newlength{\widthMarginPaperLeft}
+\newlength{\widthMarginPaperRight}
+
+% -- declare margins within document column
+\newlength{\heightMarginDocumentTop}
+\newlength{\heightMarginDocumentBottom}
+\newlength{\widthMarginDocumentLeft}
+\newlength{\widthMarginDocumentRight}
+
+% -- declare margins within banner column
+\newlength{\heightMarginBannerTop}
+\newlength{\heightMarginBannerBottom}
+\newlength{\widthMarginBannerLeft}
+\newlength{\widthMarginBannerRight}
+
+% -- declare overpaint margins for banner background
+\newlength{\heightMarginBannerBackgroundExtraTop}
+\newlength{\heightMarginBannerBackgroundExtraBottom}
+\newlength{\widthMarginBannerBackgroundExtraLeft}
+\newlength{\widthMarginBannerBackgroundExtraRight}
+
+%% -- SETTING --
+
+% -- set A4 size (for readability and ability of tweaking)
+\setlength{\widthPaper}{\paperwidth} % 210mm
+\setlength{\heightPaper}{\paperheight} % 290mm
+
+% -- set paper margins
+\setlength{\heightMarginPaperTop}{20.0mm}
+\setlength{\heightMarginPaperBottom}{13.0mm}
+\setlength{\widthMarginPaperLeft}{13.0mm}
+\setlength{\widthMarginPaperRight}{13.0mm}
+
+% -- set margins within document column
+\setlength{\heightMarginDocumentTop}{-3.0\unknownTextBlockAdjustLengt}
+\setlength{\heightMarginDocumentBottom}{0mm}
+\setlength{\widthMarginDocumentLeft}{2.5mm}
+\setlength{\widthMarginDocumentRight}{2.5mm}
+% do not indent if bordered to paper margins
+\iftoggle{togIsRightPlacementBanner}{
+    \setlength{\widthMarginDocumentLeft}{0mm}
+}{% else
+    \setlength{\widthMarginDocumentRight}{0mm}
+}
+
+% -- set margins within banner column
+\setlength{\heightMarginBannerTop}{0mm}
+\setlength{\heightMarginBannerBottom}{0mm}
+\setlength{\widthMarginBannerLeft}{2.5mm}
+\setlength{\widthMarginBannerRight}{2.5mm}
+% do not indent if bordered to paper margins
+\iftoggle{togIsRightPlacementBanner}{
+    \setlength{\widthMarginBannerRight}{0mm}
+}{% else
+    \setlength{\widthMarginBannerLeft}{0mm}
+}
+
+% -- set extra overpaint margins for banner background
+\setlength{\heightMarginBannerBackgroundExtraTop}{0.5\heightMarginPaperTop}
+\setlength{\heightMarginBannerBackgroundExtraBottom}{0.5\heightMarginPaperBottom}
+\setlength{\widthMarginBannerBackgroundExtraLeft}{0.5\widthMarginPaperLeft}
+\setlength{\widthMarginBannerBackgroundExtraRight}{0.5\widthMarginPaperRight}
+% -- overdraw half the document margin
+\iftoggle{togIsRightPlacementBanner}{
+    \setlength{\widthMarginBannerBackgroundExtraLeft}{0mm}
+}{% else
+    \setlength{\widthMarginBannerBackgroundExtraRight}{0mm}
+}

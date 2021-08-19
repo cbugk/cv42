@@ -1,0 +1,128 @@
+% +-----------------------------------------------------------------------------
+% | sidebanner 2nd PAGE
+% |
+\addtobacksidebanner{   
+	
+	% -- line seperating banner and the document
+	\lineVerticalBanner{colorsidebannerseperatorline}
+	
+	% -- see frontpage fbox
+	%\fbox{
+	
+	% See: frontpage parbox
+	\parbox[t][\heightBlockTextBanner][t]{\linewidth}{
+	    
+	    % make sure there is no space at top, but after cvjob
+		\setlength{\parskip}{1ex}
+	    
+	    % begin with name instead of picture
+		\nameandjob
+		
+		% make sure there is no space at top, but after cvjob
+		\setlength{\parskip}{1ex}
+		
+		 % include gosquare national flags from https://github.com/gosquared/flags;
+    	% naming according to ISO 3166-1 alpha-2 country codes
+	    \graphicspath{{pics/flags/flat/}}
+	    
+	    % line seperating nameandjob and the rest of sidebanner
+		\lineHorizontalBanner{colorundernameandjobseperatorline}{\heightLineHorizontalBannerBackpage}
+	
+	    \vspace{2ex}
+	
+    	%\sidesection{About Me}
+    	%\aboutme{
+        %	The giant panda is a terrestrial animal and primarily spends its life roaming and feeding in the bamboo forests of the Qinling Mountains and in the hilly province of Sichuan.
+    	%}
+      
+        \sidesubsection{Operating Systems}{
+        \begin{sidebannerminipage}
+            \flushleft
+            \recticlegreat{DOS}
+            \recticlegood{Symbian}
+            \recticlegreat{Android}
+            \recticlegreat{iOS}
+            \recticlepoor{Plan 9}
+            \recticlepoor{Temple OS}
+            \recticlefair{Windows}
+            \recticlepoor{ReactOS}
+    	\end{sidebannerminipage}
+    	}
+    	
+    	\sidesubsection{Networking}{
+            \begin{sidebannerminipage}
+                \flushleft
+        		\recticlegreat{Troubleshoot Problems}
+        		\recticlegood{ISP Router}
+        		\recticlegood{OpenVPN}
+        	\end{sidebannerminipage}
+        }
+    	
+    	\sidesubsection{Miscellaneous}{
+            \begin{sidebannerminipage}
+                \flushleft
+                \recticlegreat{Notepad}
+        		\recticlegreat{MS Office}
+        		\recticlegood{Firefox}
+        		\recticlegood{7-zip}
+        		
+        	\end{sidebannerminipage}
+    	}
+        	 
+        
+        
+        %% Achievements; academic, entrepreneurship, and job related
+    	%\sidesection{Achievements}
+        %	\skill{\faBriefcase}
+        %	{T\"{U}B\.{I}TAK B\.{I}GG, 3 \textsuperscript{rd} stage applicant
+        %	\newline Apr. 2020}
+        %	\vspace{1mm}
+        %	
+        %	\skill{\faMedal}
+        %	{Winning project among bachelors at "ANS\.{I}AD Giri\c{s}imcilik Ekosistemi
+        %	\\
+        %	Projesi, \"{O}d\"{u}ll\"{u} 7. \.{I}\c{s} Fikri Yar\i\c{s}mas\i"
+        %	\newline Dec. 2019}
+        %	\vspace{1mm}
+        %	
+        %	\skill{\faGraduationCap}
+        %	{Bilkent University Comprehensive Bachelors Scholarship
+        %	\newline 2014 / 2020}
+        %   \vspace{1mm}
+        %    
+        %    \skill{\faGraduationCap}
+        %    {T\"{U}B\.{I}TAK 2205 Bachelors Scholarship Program
+        %    \newline 2014 / 2019}
+        %    \vspace{1mm}
+
+        
+        % filler till bottom
+        \null\vfill
+        
+        %\sidesectioncentered{\raise \large \raisebox{0.5mm}{P.S.}}
+        %    \centering
+        %    \sidetext
+        %    {
+        %        Code for template available at \cvHref{https://github.com/cbugra/cv42}{\sidetext{cv42}}.
+        %    }
+        
+        \sidesectioncentered{\raise \large \raisebox{0.5mm}{Legend}}
+            \begin{sidebannerminipage}
+                \centering
+                \small
+        		\recticlegreat{Great}
+                \recticlegood{Good}
+                \recticlefair{Fair}
+                \par
+                \recticlesubpar{Subpar}
+        		\recticlepoor{Poor}
+        	\end{sidebannerminipage}
+        	
+    	% -- necessary for bottom spacing (hacky solution)
+    	% -- textblock* does not let height adjustment by itself
+    	%\parbox[b][\heightMarginBannerBottom][b]{\linewidth}{}
+    	
+    } % parbox ends
+    %} % fbox ends
+}
+% L_____________________________________________________________________________

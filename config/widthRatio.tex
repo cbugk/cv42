@@ -1,0 +1,38 @@
+%% -- independent
+
+% cvIndent indentation ratio
+\newcommand{\rindent}{0.00}
+% cvIndent post-indentation block's ratio
+\newcommand{\rblock}{0.96}
+
+%% sum <= (\rblock - 0.01)
+% cvItem date ratio
+\newcommand{\ronefirst}{0.54}
+% cvItem title ratio
+\newcommand{\ronesecond}{\fpeval{\rblock - 0.01 - \ronefirst - \ronethird}}
+% cvItem location ratio
+\newcommand{\ronethird}{0.40}
+
+%% sum <= (\rblock - 0.01)
+% cvItemAdvHead first ratio
+\newcommand{\rtwofirst}{0.54}
+% cvItemAdvHead second ratio
+\newcommand{\rtwosecond}{\fpeval{\rblock - 0.01 - \rtwofirst - \rtwothird}}
+% cvItemAdvHead third ratio
+\newcommand{\rtwothird}{0.40}
+
+%% sum <= (\rblock - 0.01)
+% cvItem head-body seperation value (e.g. 4mm)
+\newcommand{\valvspace}{2mm}
+% cvItem description's spacer ratio
+\newcommand{\rdescindent}{0.00}
+% cvItem description ratio
+\newcommand{\rdesc}{\fpeval{\rblock - \rdescindent }}% - 0.01}} % max \rblock
+
+%% sum <= (\rblock - 0.01) - 0.01
+% cvItemSkill left-most
+\newcommand{\rskillfirst}{0.05} % min 0.05
+% cvItemSkill middle - 0.01 shorter due to allignment
+\newcommand{\rskillsecond}{\fpeval{\rdesc - 0.02 - 1.5\rskillfirst - \rskillthird}}
+% cvItemSkill right-most
+\newcommand{\rskillthird}{0.18}
