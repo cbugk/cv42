@@ -10,8 +10,6 @@
 	profilepicsize=4.0cm, % 5x for bio
 	profilepicsizey=4.8cm, % 6x for bio
 	% profilepicborderwidth=3.5pt,
-	% profilepicstyle=profilecircle,
-	profilepicstyle=profilerounded,
 	% profilepiczoom=1.0,
 	% profilepicxshift=0mm,
 	% profilepicyshift=0mm,
@@ -38,11 +36,9 @@
 
 \begin{document}
 
-    \makefrontsidebanner
     \drawpagenumber{colortextbody}{1}
+    \makefrontsidebanner
     \import{./document/}{pg01Doc.tex}
-    
-    
     
     \newpage
     % \newgeometry{
@@ -51,11 +47,9 @@
     % 	left=\widthMarginPaperLeft,
     % 	right=\widthMarginPaperRight
     % }
-    
-    \makebacksidebanner
     \drawpagenumber{colortextbody}{2}
+    \makebacksidebanner
     \import{./document/}{pg02Doc.tex}
-    
 
 \end{document}
 % L_____________________________________________________________________________

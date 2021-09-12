@@ -14,38 +14,55 @@
     % desired content to the bottom. Source below:
     % https://tex.stackexchange.com/questions/223961/latex-text-parbox-at-bottom-of-page
 	\parbox[t][\heightBlockTextBanner][t]{\linewidth}{
-	    % -- Begin Personal
+	     % -- Begin Photo, Name, and Job
         % -- most sidebanner commands end with \par; increase space between them
 		\setlength{\parskip}{1ex}
-
+        
+        % -- For some reason makes photo insertion alligned rather than above
+        %\vspace{0mm}
+        
+        \begin{center}
+        
 		% -- optionally insert logo picture before profile
 		\plotlogobefore
-
+		
+        %\parbox[t][\profilepicsizey][b]{1mm}{\char32}
 		% -- optionally insert profile picture
 		\plotprofilepicture
-
+        
 		% -- optionally insert logo picture after profile
 		\plotlogoafter
+
+        % -- seperation between photo and name
+        \vspace{1mm}
 
 		% -- name and job
 		\nameandjob
 
+        \end{center}
         % make sure there is no space at top, but after cvjob
 		\setlength{\parskip}{1ex}
-
-		% -- personal information
-		\begin{icontable}[1.6]{1.7em}{0.4em}
-			\personaldata
-		\end{icontable}
 	
     	% -- include gosquare national flags from https://github.com/gosquared/flags;
     	% -- naming according to ISO 3166-1 alpha-2 country codes
     	\graphicspath{{pics/flags/shiny/}}
-    	% End Personal
+    	% End Photo, Name, and Job
     	
-        % -- line seperating nameandjob and the rest of sidebanner
+         % -- line seperating nameandjob and the rest of sidebanner
 		\lineHorizontalBanner{colorundernameandjobseperatorline}{\heightLineHorizontalBannerFrontpage}
-    	
+		
+		\sidesection{Contact}
+         % -- personal information
+		\begin{icontable}[1.6]{1.7em}{0.4em}
+			% phone number
+            \cvphone{\mymobile}
+            
+            % email address
+            \cvmail{\mymail}
+            
+            % short address/location, use \newline if more than 1 line is required
+            \cvaddress{\myaddress}
+		\end{icontable}
     
     	% -- social network accounts incl. proper hyperlinks
     	\sidesection{Social Accounts}
@@ -90,33 +107,7 @@
 			\skill{\faCouch}{Soft Skill}
 			\skill{\faCode}{Soft-like skill}
 			
-        % -- Hard skills, color coded recticle beans
-    	\sidesection{Hard Skills}
-    	
-            \sidesubsection{Forums etc.}{
-                \begin{sidebannerminipage}
-                    \flushleft
-            		\recticlegood{StackOverflow}
-            		\recticlegreat{Reddit}
-            		\recticlefair{MyDigitalLife}
-            		\recticlesubpar{Hackaday}
-            		\recticlegood{instructables}
-            		\recticlegood{XDA Devs}
-            		\recticlegood{Donan\i m Haber}
-            		
-            	\end{sidebannerminipage}
-        	}
-            
-            \sidesubsection{Programming Langs.}{
-        	    \begin{sidebannerminipage}
-        	        \flushleft
-        	        \recticlepoor{R}
-        	        \recticlepoor{Boo}
-            		\recticlepoor{Common Lisp}
-            		\recticlepoor{Haskell}
-            		\recticlegreat{Scratch}
-            	\end{sidebannerminipage}
-        	}
+        
         	
         
         % filler till bottom

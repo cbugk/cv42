@@ -85,14 +85,14 @@
 % icon can be taken from FontAwesome or Academicon for example
 \newcommand{\personaldata}{}
 \newcommand*{\cvcustomdata}[2]{%
-	\apptocmd{\personaldata}{\personal{#1}{#2}}{}{}%
+	\personal{#1}{#2}%
 }
 
 % useful shortcuts
 % NOTE: we use href instead of url so user can decide textformatting since url
 % automatically uses \texttt{} as format for the url
-\newcommand*{\cvbirthday}[1]{\cvcustomdata{\faUser}{\sidetext{#1}}}
-\newcommand*{\cvaddress}[1]{\cvcustomdata{\faEnvelope}{\sidetext{#1}}}
+\newcommand*{\cvbirthday}[1]{\cvcustomdata{\faCalendarDay}{\sidetext{#1}}}
+\newcommand*{\cvaddress}[1]{\cvcustomdata{\faMapMarked}{\sidetext{#1}}}
 \newcommand*{\cvphone}[1]{\cvcustomdata{\faPhone}{\cvHref{tel:#1}{\sidetext{#1}}}}
 \newcommand*{\cvsite}[1]{\cvcustomdata{\faGlobe}{\cvHref{#1}{\sidetext{#1}}}}
 \newcommand*{\cvmail}[1]{\cvcustomdata{\faAt}{\cvHref{mailto:#1}{\sidetext{#1}}}}
@@ -142,28 +142,28 @@
 }
 
 \newcommand{\profilesharpcorners}{%
-	\begin{figure}\centering
+	\begin{figure}%\centering
 		% see TikZ/pgf v3.1.1 manual §2.11 (clipping), §14.5 (rounded corners),
 		% §12 (scopes), §13.2 (coordinate systems)
 		\begin{tikzpicture}[x=\profilepicsize, y=\profilepicsizey]
 			\begin{scope}
 				\path[clip]
-					(0, 0) [sharp corners] --
-					(0, 1) [sharp corners] --
-					(1, 1) [sharp corners] --
-					(1, 0) [sharp corners] -- cycle;
+					($(0, 0) + (\unknownPhotoAdjustLength, 0)$) [sharp corners] --
+					($(0, 1) + (\unknownPhotoAdjustLength, 0)$) [sharp corners] --
+					($(1, 1) + (\unknownPhotoAdjustLength, 0)$) [sharp corners] --
+					($(1, 0) + (\unknownPhotoAdjustLength, 0)$) [sharp corners] -- cycle;
 				\node[anchor=center, inner sep=0pt, xshift=\profilepicxshift,
-						yshift=\profilepicyshift] (profilepic) at (0.5, 0.5)
+						yshift=\profilepicyshift] (profilepic) at ($(0.5, 0.5) + (\unknownPhotoAdjustLength, 0)$)
 					{\includegraphics[width=\profilepiczoom\profilepicsize]
 						{\cvprofilepic}};
 			\end{scope}
 			\ifdim \profilepicborderwidth > 0pt
 				\begin{scope}
-					\draw[line width=\profilepicborderwidth, color=colorphotoframe]
-					(0, 0) [sharp corners] --
-					(0, 1) [sharp corners] --
-					(1, 1) [sharp corners] --
-					(1, 0) [sharp corners] -- cycle;
+					\draw[line width=\profilepicborderwidth, color=colorphotoframe] 
+					($(0, 0) + (\unknownPhotoAdjustLength, 0)$) [sharp corners] --
+					($(0, 1) + (\unknownPhotoAdjustLength, 0)$) [sharp corners] --
+					($(1, 1) + (\unknownPhotoAdjustLength, 0)$) [sharp corners] --
+					($(1, 0) + (\unknownPhotoAdjustLength, 0)$) [sharp corners] -- cycle;
 				\end{scope}
 			\fi
 		\end{tikzpicture}
@@ -238,7 +238,7 @@
 % | [indent] [icon]  description  \hfill  ● ● ● ○ ○ |
 % -- inspired by arravc.cls by LianTze Lim: https://github.com/liantze/AltaCV
 \NewDocumentCommand{\pointskill}{ O{0em} m m m O{5} }{%
-	\hspace{#1} \cvIcon{#2} ~ \sidetext{#3} \hfill%
+	\hspace{#1} \raisebox{0.5\height-0.6ex}{\cvIcon{#2}} ~ \sidetext{#3} \hfill%
 	\foreach \x in {1,...,#5}{%
 		\space%
 		{\ifnumgreater{\x}{#4}{\color{colorpointskillunfilled}}{\color{colorpointskillfilled}}% from etoolbox

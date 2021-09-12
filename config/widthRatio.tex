@@ -3,23 +3,25 @@
 % cvIndent indentation ratio
 \newcommand{\rindent}{0.00}
 % cvIndent post-indentation block's ratio
-\newcommand{\rblock}{0.96}
+\newcommand{\rblock}{0.99}
 
 %% sum <= (\rblock - 0.01)
 % cvItem date ratio
-\newcommand{\ronefirst}{0.54}
+\newcommand{\ronefirst}{0.58}
 % cvItem title ratio
-\newcommand{\ronesecond}{\fpeval{\rblock - 0.01 - \ronefirst - \ronethird}}
+%\newcommand{\ronesecond}{\fpeval{\rblock - 0.01 - \ronefirst - \ronethird}}
+\newcommand{\ronesecond}{0.01}
 % cvItem location ratio
-\newcommand{\ronethird}{0.40}
+\newcommand{\ronethird}{0.39}
 
 %% sum <= (\rblock - 0.01)
 % cvItemAdvHead first ratio
-\newcommand{\rtwofirst}{0.54}
+\newcommand{\rtwofirst}{0.58}
 % cvItemAdvHead second ratio
-\newcommand{\rtwosecond}{\fpeval{\rblock - 0.01 - \rtwofirst - \rtwothird}}
+%\newcommand{\rtwosecond}{\fpeval{\rblock - 0.01 - \rtwofirst - \rtwothird}}
+\newcommand{\rtwosecond}{0.01}
 % cvItemAdvHead third ratio
-\newcommand{\rtwothird}{0.40}
+\newcommand{\rtwothird}{0.39}
 
 %% sum <= (\rblock - 0.01)
 % cvItem head-body seperation value (e.g. 4mm)
@@ -36,3 +38,12 @@
 \newcommand{\rskillsecond}{\fpeval{\rdesc - 0.02 - 1.5\rskillfirst - \rskillthird}}
 % cvItemSkill right-most
 \newcommand{\rskillthird}{0.18}
+
+%cvItemDocDuo and cvItemDocDuoHead left
+\newcommand{\rdoneleft}{0.70}
+%cvItemDocDuo and cvItemDocDuoHead right
+\newcommand{\rdoneright}{0.28}
+%cvItemDocDuo and cvItemDocDuoHead left
+\newcommand{\rdtwoleft}{0.70}
+%cvItemDocDuo and cvItemDocDuoHead right
+\newcommand{\rdtworight}{0.28}

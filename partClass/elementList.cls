@@ -107,26 +107,42 @@
     \\
 }
 
-\newcommand{\cvItemDoc}[5]{
+\newcommand{\cvItemDocDuo}[5]{
     \parbox{\rindent\textwidth}{\char32}
     \parbox{\rblock\textwidth}{
         \parbox{\linewidth}{\vspace{0.5\valvspace}}
         \par
-        \parbox{\ronefirst\textwidth}{#1}
-        \parbox{\ronesecond\textwidth}{\char32}
-        \parbox{\ronethird\textwidth}{\small \hfill #2}
+        \parbox[t]{\rdoneleft\textwidth}{#1}
+        \parbox[t]{\rdoneright\textwidth}{\hfill #2}
         \par
         
         \vspace{0.5\valvspace}
-        \parbox{\rtwofirst\textwidth}{\large #3}
-        \parbox{\rtwosecond\textwidth}{\char32}
-        \parbox{\rtwothird\textwidth}{\hfill #4}
+        \parbox[t]{\rdtwoleft\textwidth}{\large #3}
+        \parbox[t]{\rdtworight\textwidth}{\hfill #4}
         \par
     
         \vspace{\valvspace}
         %\parbox{\rdescindent\textwidth}{\char32}
         \parbox{\rdesc\textwidth}{#5}
-        \\
+        \par
+    }
+    \vspace{\valvspace}
+    \\   
+}
+
+\newcommand{\cvItemDocDuoHead}[4]{
+    \parbox{\rindent\textwidth}{\char32}
+    \parbox{\rblock\textwidth}{
+        \parbox{\linewidth}{\vspace{0.5\valvspace}}
+        \par
+        \parbox{\rdoneleft\textwidth}{#1}
+        \parbox{\rdoneright\textwidth}{\hfill #2}
+        \par
+        
+        \vspace{0.5\valvspace}
+        \parbox{\rdtwoleft\textwidth}{\large #3}
+        \parbox{\rdtworight\textwidth}{\hfill #4}
+        \par
     }
     \vspace{\valvspace}
     \\   
