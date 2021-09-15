@@ -93,9 +93,11 @@
 % automatically uses \texttt{} as format for the url
 \newcommand*{\cvbirthday}[1]{\cvcustomdata{\faCalendarDay}{\sidetext{#1}}}
 \newcommand*{\cvaddress}[1]{\cvcustomdata{\faMapMarked}{\sidetext{#1}}}
-\newcommand*{\cvphone}[1]{\cvcustomdata{\faPhone}{\cvHref{tel:#1}{\sidetext{#1}}}}
+\newcommand*{\cvPhone}[1]{\cvHref{tel:#1}{\sidetext{#1}}}
+\newcommand*{\cvPhoneWithIcon}[1]{\cvcustomdata{\faPhone}{\cvPhone{#1}}}
 \newcommand*{\cvsite}[1]{\cvcustomdata{\faGlobe}{\cvHref{#1}{\sidetext{#1}}}}
-\newcommand*{\cvmail}[1]{\cvcustomdata{\faAt}{\cvHref{mailto:#1}{\sidetext{#1}}}}
+\newcommand*{\cvMail}[1]{\cvHref{mailto:#1}{\sidetext{#1}}}
+\newcommand*{\cvMailWithIcon}[1]{\cvcustomdata{\faAt}{\cvMail{#1}}}
 \newcommand*{\cvkey}[2]{\cvcustomdata{\faKey}{%
 	\cvHref{insert_key_link_here}{\sidetext{#1}}%
 }}
