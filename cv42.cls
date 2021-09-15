@@ -24,6 +24,9 @@
 \newlength{\unknownTextBlockAdjustLengt}
 \setlength{\unknownTextBlockAdjustLengt}{2mm}
 
+% standard-ish vspace
+\newcommand{\vertfiller}{\vspace*{0.5ex}}
+
 %% -- INDEPENDENTS --
 
 % -- independent
@@ -86,10 +89,6 @@
 % |
 \import{./partClass/}{globalLayout.cls}
 % L_____________________________________________________________________________
-
-
-% standard-ish vspace
-\newcommand{\vertfiller}{\vspace*{0.5ex}}
 
 % +-----------------------------------------------------------------------------
 % | PARTIAL CLS FILES - under "partClass" directory, always ".cls" files

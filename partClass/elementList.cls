@@ -103,7 +103,7 @@
             \\
         }
     }
-    \vspace{\valvspace}
+    %\vspace{\valvspace}
     \\
 }
 
@@ -126,7 +126,7 @@
         \parbox{\rdesc\textwidth}{#5}
         \par
     }
-    \vspace{\valvspace}
+    %\vspace{\valvspace}
     \\   
 }
 
@@ -144,7 +144,7 @@
         \parbox{\rdtworight\textwidth}{\hfill #4}
         \par
     }
-    \vspace{\valvspace}
+    %\vspace{\valvspace}
     \\   
 }
 
@@ -158,7 +158,7 @@
         \par
         \\
     }
-    \vspace{\valvspace}
+    %\vspace{\valvspace}
     \\   
 }
 \newcommand{\cvItemSkillCircle}[3]{
@@ -171,7 +171,7 @@
         \par
         \\
     }
-    \vspace{\valvspace}
+    %\vspace{\valvspace}
     \\   
 }
 
